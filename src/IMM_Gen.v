@@ -1,16 +1,16 @@
 //Immediate_Generator
-module Imm_Gen (input [31:0] Instruction, output [31:0] Imm_Out);
+module Imm_Gen (input [15:0] Instruction, output reg [7:0] Imm_Out);
     
-    wire[6:0] opcode=Instruction[6:0];
+    wire[3:0] opcode=Instruction[15:12];
     always @(*) begin
         case (opcode)
-            //I-format or load word
-            7'b0000011: Imm_Out= {20{Instruction[31]}, Instruction[31:20]};
-            //SW-format
-            7'b0100011: Imm_Out= {20{Instruction[31]}, Instruction[31:25], Instruction[11:7]};
-            //B-format (beq)
-            7'b1100011: Imm_Out= {19{Instruction[31]}, Instruction[31], Instruction[7], Instruction[30:25], Instruction[11:8], 1'b0};
-            default: 
+            // LI-format load imm
+            4'b0010: Imm_Out= Instruction[7:0];
+            // I-format
+            4'b0001, 4'b0011, 4'b1000, 4'b1001, 4'b1010, 4'b1011, 4'b1100: Imm_Out= { {2{Instruction[5]}}, Instruction[5:0] };
+            // S/B-format 
+            4'b0100, 4'b0101, 4'b0110, 4'b0111: Imm_Out= { {2{Instruction[5]}}, Instruction[5:0] };
+            default: Imm_Out=8'b0;
         endcase
     end
 
