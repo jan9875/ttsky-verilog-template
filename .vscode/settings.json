@@ -1,4 +1,16 @@
 {
   "verilog.linting.linter": "verilator",
-  "verilog.formatting.verilogHDL.formatter": "verible-verilog-format"
+  "verilog.formatting.verilogHDL.formatter": "verible-verilog-format",
+  "verilog.linting.verilator.arguments": "-Wall",
+  "terminal.integrated.profiles.windows": {
+    "OSS CAD": {
+        "path": "cmd.exe",
+        "args": ["/k", "C:\\oss-cad-suite\\environment.bat"]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "OSS CAD",
+  "python.analysis.extraPaths": ["C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages"]
+
 }
+
+
