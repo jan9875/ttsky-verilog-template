@@ -14,4 +14,5 @@ module Imm_Gen (input [15:0] Instruction, output reg [7:0] Imm_Out);
         endcase
     end
 
+
 endmodule

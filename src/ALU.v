@@ -50,8 +50,11 @@ module ALU(
                 less_than=0; 
             end
             
-            default: ALU_result=8'b0;
-
+            default: begin
+                ALU_result=8'b0;
+                zero=0;
+                less_than=0;
+            end
         endcase
     end
 
