@@ -30,7 +30,7 @@ module tb_top;
         
         ui_in=8'b00000100;
         uio_in=8'b00001000;
-        
+         
         
         
 
