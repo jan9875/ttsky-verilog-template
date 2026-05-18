@@ -25,7 +25,6 @@ project:
     - "CPU_Core.v"
     - "Data_Memory.v"
     - "Imm_Gen.v"
-    - "Instruction_Memory.v"
     - "Muxes.v"
     - "PCplus4Adder.v"
     - "Program_Counter.v"
